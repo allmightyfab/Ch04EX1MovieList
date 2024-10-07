@@ -16,5 +16,9 @@ namespace Ch04EX1MovieList.Models
         [Range(1,5, ErrorMessage ="Rating must be between 1 and 5")]
         public int? Rating { get; set; }
 
+        [Required(ErrorMessage ="Please Enter a Genre.")]
+        public string GenreID { get; set; }
+        public Genre Genre { get; set; }
+
     }
 }
