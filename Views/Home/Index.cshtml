@@ -1,4 +1,6 @@
-﻿@model List<Moviecs>
+﻿
+
+@model List<Moviecs>
 
 @{
     ViewData["Title"] = "My Movies";
@@ -6,7 +8,7 @@
 
 <h2>Movie List</h2>
 
-<a asp-controller="Movies" asp-action="Add">Add New Movie</a>
+<a asp-controller="Moviecs" asp-action="Add">Add New Movie</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -24,9 +26,9 @@
                 <td>@movie.Year</td>
                 <td>@movie.Rating</td>
                 <td>
-                    <a asp-controller="Movie" asp-action="Edit"
+                    <a asp-controller="Moviecs" asp-action="Edit"
                         asp-route-id="@movie.MovieId">Edit</a>
-                    <a asp-controller="Movie" asp-action="Delete"
+                    <a asp-controller="Moviecs" asp-action="Delete"
                        asp-route-id="@movie.MovieId">Delete</a>
                 </td>
             </tr>
