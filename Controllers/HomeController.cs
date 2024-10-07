@@ -1,6 +1,7 @@
 using Ch04EX1MovieList.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ch04EX1MovieList.Controllers
 {
@@ -17,7 +18,8 @@ namespace Ch04EX1MovieList.Controllers
 
         public IActionResult Index()
         {
-            var movies=context.Movies.OrderBy(m => m.Name).ToList();
+            var movies=context.Movies.Include(m => m.Genre)
+                .OrderBy(m => m.Name).ToList();
             return View(movies);
         }
 
