@@ -13,6 +13,9 @@ namespace Ch04EX1MovieList.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Moviecs>()
+        .HasKey(m => m.MovieId);
+
             modelBuilder.Entity<Moviecs>().HasData(
                 new Moviecs
                 {
